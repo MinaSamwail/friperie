@@ -1,0 +1,30 @@
+@font-face  {
+    font-family: 'Oswald-Light';
+    src: url('../css/fonts/Oswald/static/Oswald-Light.ttf');
+}
+
+*{
+    font-family: 'Oswald-Light' ;
+}
+
+.navMain__up{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.navMain__down {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navMain__down a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.navMain__sous {
+    display: flex;
+    justify-content: center;
+}

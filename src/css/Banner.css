@@ -1,0 +1,15 @@
+.banner{
+    background: url("../css/images/4988298.jpg") center center no-repeat;
+    height: 50vh;
+    position: relative;
+}
+
+
+.banner__info{
+    text-decoration: none;
+    color: black;
+    font-size: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items:flex-end
+}
