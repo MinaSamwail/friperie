@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import LocalMallIcon from "@material-ui/icons/LocalMall";
 import { IconButton } from "@material-ui/core";
 import "../css/NavMain.css";
@@ -12,7 +12,9 @@ function NavMain() {
   return (
     <div className="navMain">
       <div className="navMain__up">
-        <h1>Kind of Cool - Friperie en Ligne</h1>
+        <Link to="/">
+          <h1>Kind of Cool - Friperie en Ligne</h1>
+        </Link>
         <IconButton edge="start" color="inherit">
           <LocalMallIcon fontSize="large" />
         </IconButton>
@@ -25,19 +27,19 @@ function NavMain() {
             onMouseEnter={toggleHover}
             onMouseLeave={toggleHover}
           >
-            Vetements
+            Kind Of Cool - Clothes
           </h2>
         </NavLink>
 
         <NavLink to="/accessoires">
-          <h2>Accessoires</h2>
+          <h2>Kind Of Cool - Stuff</h2>
         </NavLink>
 
         <NavLink to="/creation">
-          <h2>Création</h2>
+          <h2>Kind Of Cool - Creators</h2>
         </NavLink>
       </div>
-      <div className="navMain__sous">
+      <div className="navMain__sousCategories">
         <NavLink to="/haut">
           <div>{hover ? <p>Haut</p> : ""}</div>
         </NavLink>

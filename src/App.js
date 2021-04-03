@@ -1,12 +1,17 @@
 import "./App.css";
-import Banner from "./components/Banner";
+import { Switch, Route } from "react-router-dom";
 import NavMain from "./components/NavMain";
+import Home from "./views/Home";
+import Card from "./components/Card";
 
 function App() {
   return (
     <div className="app">
       <NavMain />
-      <Banner />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/details" component={Card} />
+      </Switch>
     </div>
   );
 }
