@@ -1,6 +1,17 @@
+
+@font-face  {
+  font-family: 'Oswald-Light';
+  src: url('./css/fonts/Oswald/static/Oswald-Light.ttf');
+}
+
 *{
+  font-family: 'Oswald-Light' ;
   margin: 0;
 }
+
+/* *{
+  margin: 0;
+} */
 
 body {
   margin: 0;

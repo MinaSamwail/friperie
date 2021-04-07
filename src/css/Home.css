@@ -3,7 +3,7 @@
 .home__icon{
     object-fit: fill;
     width: 20%;
-    margin: 20px 20px;
+    margin: 40px 40px;
 }
 
 .home__link{
@@ -16,12 +16,12 @@
     align-items: center;
     flex-direction: column;
     position: absolute;
-    top: -365px;
+    top: -384px;
     bottom: 25px;
-    left: 20px;
+    left: 40px;
     right: 20px;
     height: 49.5vh;
-    width: 88%;
+    width: 78.5%;
     opacity: 0;
     transition: .5s ease;
     /* background-color: #ee7c69; */

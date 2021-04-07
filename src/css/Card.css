@@ -1,0 +1,29 @@
+.card{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 10px;
+}
+
+.card__picture{
+    display: flex;
+    flex-direction: column;
+}
+
+.card__picture > img:first-child{
+    
+    width: 500px;
+}
+
+.card__picture > img:nth-child(2n){
+    width: 100px;
+}
+
+.card__description{
+    margin: 50px;
+}
+
+.card__description >h2{
+    font-size: 35px;
+}
+

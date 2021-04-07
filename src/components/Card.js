@@ -2,18 +2,18 @@ import React from "react";
 import "../css/Card.css";
 
 function Card(props) {
-  console.log("props", props.location.query.images[0]);
-  const { title, price, avaibility, images } = props.location.query;
+  const { title, price, picture } = props.location.query.vestiaire.vetement;
+
   return (
     <div className="card">
-      {images.map((image) => {
-        return <img className="project-picture" src={image} alt={title} />;
-      })}
-
-      <div className="card__info">
+      <div className="card__picture">
+        {picture.map((image) => {
+          return <img src={image} alt={title} />;
+        })}
+      </div>
+      <div className="card__description">
         <h2>{title}</h2>
         <h3>{price}</h3>
-        <h4>{avaibility}</h4>
       </div>
     </div>
   );
