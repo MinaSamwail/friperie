@@ -8,6 +8,7 @@
 .card__picture{
     display: flex;
     flex-direction: column;
+    width: 36%;
 }
 
 .card__picture > img:first-child{
@@ -21,9 +22,23 @@
 
 .card__description{
     margin: 50px;
+    /* text-align: center; */
 }
 
 .card__description >h2{
-    font-size: 35px;
+    font-size: 30px;
+}
+
+.card__btn{
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.carousel {
+    text-align: center;
 }
 
