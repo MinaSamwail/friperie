@@ -11,15 +11,6 @@
     width: 36%;
 }
 
-.card__picture > img:first-child{
-    
-    width: 500px;
-}
-
-.card__picture > img:nth-child(2n){
-    width: 100px;
-}
-
 .card__description{
     margin: 50px;
     /* text-align: center; */
