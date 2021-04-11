@@ -2,32 +2,32 @@
     {
       "id": 0,
       "picture": ["https://res.cloudinary.com/dub0zzdwg/image/upload/v1617782581/friperie/IMG-2591_frkucx.jpg","https://res.cloudinary.com/dub0zzdwg/image/upload/v1617782569/friperie/IMG-2592_tz1nbp.jpg", "https://res.cloudinary.com/dub0zzdwg/image/upload/v1608305174/v7dekdr0oikrqllshhns.png"],
-      "title": "Vest en jean",
-      "price": "10€"
+      "title": "Veste en jean",
+      "price": 10
     },
     {
-      "id": 0,
+      "id": 1,
       "picture": ["https://res.cloudinary.com/dub0zzdwg/image/upload/v1617782581/friperie/IMG-2591_frkucx.jpg","https://res.cloudinary.com/dub0zzdwg/image/upload/v1617782569/friperie/IMG-2592_tz1nbp.jpg"],
-      "title": "Vest en jean",
-      "price": "10€"
+      "title": "T-Shirt en jean",
+      "price": 30
     },
     {
-      "id": 0,
+      "id": 2,
       "picture": ["https://res.cloudinary.com/dub0zzdwg/image/upload/v1617782581/friperie/IMG-2591_frkucx.jpg","https://res.cloudinary.com/dub0zzdwg/image/upload/v1617782569/friperie/IMG-2592_tz1nbp.jpg"],
-      "title": "Vest en jean",
-      "price": "10€"
+      "title": "Short en jean",
+      "price": 20
     },
     {
-      "id": 0,
+      "id": 3,
       "picture": ["https://res.cloudinary.com/dub0zzdwg/image/upload/v1617782581/friperie/IMG-2591_frkucx.jpg","https://res.cloudinary.com/dub0zzdwg/image/upload/v1617782569/friperie/IMG-2592_tz1nbp.jpg"],
-      "title": "Vest en jean",
-      "price": "10€"
+      "title": "Claquette en jean",
+      "price": 15
     },
     {
-      "id": 0,
+      "id": 4,
       "picture": ["https://res.cloudinary.com/dub0zzdwg/image/upload/v1617782581/friperie/IMG-2591_frkucx.jpg","https://res.cloudinary.com/dub0zzdwg/image/upload/v1617782569/friperie/IMG-2592_tz1nbp.jpg"],
       "title": "Vest en jean",
-      "price": "10€"
+      "price": 10
     }
   ]
 

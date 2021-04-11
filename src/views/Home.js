@@ -12,6 +12,7 @@ function Home() {
       <Banner />
       {vestiaires.map((vetement) => (
         <Link
+          key={vetement.id}
           className="home__link"
           to={{
             pathname: `/details`,
@@ -26,8 +27,8 @@ function Home() {
             alt="vetement"
           />
           <div className="overlay">
-            <p className="text-bloc">10€</p>
-            <p className="text">vetement</p>
+            <p className="text-bloc">{vetement.price}€</p>
+            <p className="text">{vetement.title}</p>
           </div>
         </Link>
       ))}

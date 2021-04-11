@@ -15,9 +15,11 @@ function NavMain() {
         <Link to="/">
           <h1>Kind of Cool - Friperie en Ligne</h1>
         </Link>
-        <IconButton edge="start" color="inherit">
-          <LocalMallIcon fontSize="large" />
-        </IconButton>
+        <Link to="/panier">
+          <IconButton edge="start" color="inherit">
+            <LocalMallIcon fontSize="large" />
+          </IconButton>
+        </Link>
       </div>
 
       <div className="navMain__down">
