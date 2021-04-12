@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "../css/Card.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-
 import apiHandler from "../api/apiHandler";
 
 function Card(props) {
@@ -32,6 +31,7 @@ function Card(props) {
       <div className="card__description">
         <h2>{title}</h2>
         <h3>{price}€</h3>
+
         <input
           type="submit"
           value="Ajouter au panier"

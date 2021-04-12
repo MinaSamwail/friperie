@@ -24,11 +24,7 @@ function NavMain() {
 
       <div className="navMain__down">
         <NavLink to="/vetements">
-          <h2
-            // className='navMain__'
-            onMouseEnter={toggleHover}
-            onMouseLeave={toggleHover}
-          >
+          <h2 onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
             Kind Of Cool - Clothes
           </h2>
         </NavLink>
