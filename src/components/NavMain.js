@@ -4,10 +4,25 @@ import LocalMallIcon from "@material-ui/icons/LocalMall";
 import { IconButton } from "@material-ui/core";
 import "../css/NavMain.css";
 
-function NavMain() {
-  const [hover, setHover] = useState(false);
+// la
+import { withUser } from "../components/Auth/withUser";
+import apiHandler from "../api/apiHandler";
 
+function NavMain(props) {
+  const [hover, setHover] = useState(false);
   const toggleHover = () => setHover(!hover);
+
+  const { context } = props;
+  function handleLogout() {
+    apiHandler
+      .logout()
+      .then(() => {
+        context.removeUser();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
   return (
     <div className="navMain">
@@ -15,6 +30,32 @@ function NavMain() {
         <Link to="/">
           <h1>Kind of Cool - Friperie en Ligne</h1>
         </Link>
+        {/* la */}
+        <ul className="nav-list">
+          {context.isLoggedIn && (
+            <React.Fragment>
+              <li>
+                <NavLink to="/profile">
+                  {context.user && context.user.email}
+                </NavLink>
+              </li>
+              <li>
+                <p onClick={handleLogout}>Logout</p>
+              </li>
+            </React.Fragment>
+          )}
+          {!context.isLoggedIn && (
+            <React.Fragment>
+              <li>
+                <NavLink to="/signin">Log in</NavLink>
+              </li>
+              <li>
+                <NavLink to="/signup">Create account</NavLink>
+              </li>
+            </React.Fragment>
+          )}
+        </ul>
+        {/* a la  */}
         <Link to="/panier">
           <IconButton edge="start" color="inherit">
             <LocalMallIcon fontSize="large" />
@@ -49,4 +90,5 @@ function NavMain() {
   );
 }
 
-export default NavMain;
+// export default NavMain;
+export default withUser(NavMain);

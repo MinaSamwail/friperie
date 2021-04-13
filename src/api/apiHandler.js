@@ -15,6 +15,35 @@ function errorHandler(error) {
 
 export default {
   service,
+
+  signup(userInfo) {
+    return service
+      .post("/api/auth/signup", userInfo)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
+
+  signin(userInfo) {
+    return service
+      .post("/api/auth/signin", userInfo)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
+
+  isLoggedIn() {
+    return service
+      .get("/api/auth/isLoggedIn")
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
+
+  logout() {
+    return service
+      .get("/api/auth/logout")
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
+
   transferArticle(total) {
     return service
       .post(`/api/vetement/article`, total)
