@@ -5,18 +5,17 @@ import "../css/Panier.css";
 function Panier() {
   const [articles, setArticles] = useState([]);
   const [subTotal, setSubTotal] = useState(0);
+  const [alert, setAlert] = useState("");
   console.log("ARTICLES", articles);
-  // CA
+
   useEffect(() => {
     total();
   }, [articles]);
 
-  //CA
   const total = () => {
-    console.log(articles);
     let totalVal = 0;
     for (let i = 0; i < articles.length; i++) {
-      console.log("PRICE", articles[i].price);
+      // console.log("PRICE", articles[i].price);
       totalVal += articles[i].price;
     }
     setSubTotal(totalVal);
@@ -47,7 +46,7 @@ function Panier() {
           <tr>
             <th>Product</th>
             <th>Price</th>
-            <th>Subtotal</th>
+            {/* <th>Subtotal</th> */}
           </tr>
         </thead>
         <tbody>
@@ -63,7 +62,7 @@ function Panier() {
                     />
                   </td>
                   <td>{article.title}</td>
-                  <td>{article.price}</td>
+                  <td>{article.price}€</td>
                   <td>
                     <button
                       className="panier__deleteBtn"
@@ -72,13 +71,14 @@ function Panier() {
                       Delete this article
                     </button>
                   </td>
-                  <td>TOTAL : {subTotal}</td>
+                  {/* <td>TOTAL : {subTotal}</td> */}
                 </tr>
               );
             })}
           </div>
         </tbody>
       </table>
+      <h1>TOTAL : {subTotal}€</h1>
     </div>
   );
 }
