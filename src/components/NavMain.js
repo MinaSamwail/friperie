@@ -30,32 +30,29 @@ function NavMain(props) {
         <Link to="/">
           <h1>Kind of Cool - Friperie en Ligne</h1>
         </Link>
-        {/* la */}
-        <ul className="nav-list">
-          {context.isLoggedIn && (
-            <React.Fragment>
-              <li>
-                <NavLink to="/profile">
-                  {context.user && context.user.email}
-                </NavLink>
-              </li>
-              <li>
-                <p onClick={handleLogout}>Logout</p>
-              </li>
-            </React.Fragment>
-          )}
-          {!context.isLoggedIn && (
-            <React.Fragment>
-              <li>
-                <NavLink to="/signin">Log in</NavLink>
-              </li>
-              <li>
-                <NavLink to="/signup">Create account</NavLink>
-              </li>
-            </React.Fragment>
-          )}
-        </ul>
-        {/* a la  */}
+
+        {context.isLoggedIn && (
+          <React.Fragment>
+            <h3>
+              <NavLink to="/panier">
+                {context.user && context.user.email}
+              </NavLink>
+            </h3>
+
+            <h3 onClick={handleLogout}>Logout</h3>
+          </React.Fragment>
+        )}
+        {!context.isLoggedIn && (
+          <React.Fragment>
+            <h3>
+              <NavLink to="/signin">Log in</NavLink>
+            </h3>
+            <h3>
+              <NavLink to="/signup">Create account</NavLink>
+            </h3>
+          </React.Fragment>
+        )}
+
         <Link to="/panier">
           <IconButton edge="start" color="inherit">
             <LocalMallIcon fontSize="large" />

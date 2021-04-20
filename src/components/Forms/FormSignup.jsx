@@ -38,6 +38,7 @@ class FormSignup extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
+        <h2>Salut Inscris toi</h2>
         <label htmlFor="email">Email</label>
         <input
           onChange={this.handleChange}

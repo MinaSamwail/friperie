@@ -22,6 +22,7 @@ function Panier() {
   };
 
   useEffect((allArticle) => {
+    console.log("Article", allArticle);
     apiHandler.getArticle(allArticle).then((response) => {
       setArticles(response);
     });
