@@ -11,7 +11,7 @@ import apiHandler from "../api/apiHandler";
 function NavMain(props) {
   const [hover, setHover] = useState(false);
   const toggleHover = () => setHover(!hover);
-
+  // console.log("PROPS", props.context.user.panier);
   const { context } = props;
   function handleLogout() {
     apiHandler

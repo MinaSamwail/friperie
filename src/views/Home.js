@@ -7,10 +7,26 @@ import vestiaire from "../data/vestiaire.json";
 function Home() {
   const [vestiaires, setVestiaire] = useState(vestiaire);
 
+  const triPrixDecroissant = () => {
+    const sortedUp = [...vestiaires].sort((articleA, articleB) => {
+      console.log("articleA", articleA);
+      return articleB.price - articleA.price;
+    });
+    setVestiaire(sortedUp);
+  };
+
+  const triPrixCroissant = () => {
+    const sortedDown = [...vestiaires].sort((articleA, articleB) => {
+      console.log("articleA", articleA);
+      return articleA.price - articleB.price;
+    });
+    setVestiaire(sortedDown);
+  };
+
   return (
     <div className="home">
       <Banner />
-      {vestiaires.map((vetement) => (
+      {vestiaires.map((vetement, i) => (
         <Link
           key={vetement.id}
           className="home__link"
@@ -32,6 +48,8 @@ function Home() {
           </div>
         </Link>
       ))}
+      <div onClick={triPrixDecroissant}>Trier par prix decroissant</div>
+      <div onClick={triPrixCroissant}>Trier par prix croissant</div>
     </div>
   );
 }

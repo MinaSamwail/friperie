@@ -52,13 +52,10 @@ export default {
   },
 
   getArticle() {
-    return (
-      service
-        .get(`/api/vetement`)
-        .then((res) => res.data)
-        // .then((res) => console.log("RES", res))
-        .catch(errorHandler)
-    );
+    return service
+      .get(`/api/vetement/panier`)
+      .then((res) => res.data)
+      .catch(errorHandler);
   },
 
   deleteArticle(id) {
