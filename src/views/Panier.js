@@ -5,7 +5,6 @@ import "../css/Panier.css";
 function Panier() {
   const [articles, setArticles] = useState([]);
   const [subTotal, setSubTotal] = useState(0);
-  const [alert, setAlert] = useState("");
   console.log("ARTICLES", articles);
 
   useEffect(() => {
@@ -15,14 +14,12 @@ function Panier() {
   const total = () => {
     let totalVal = 0;
     for (let i = 0; i < articles.length; i++) {
-      // console.log("PRICE", articles[i].price);
       totalVal += articles[i].price;
     }
     setSubTotal(totalVal);
   };
 
   useEffect((allArticle) => {
-    // console.log("Article", allArticle);
     apiHandler.getArticle(allArticle).then((response) => {
       setArticles(response);
     });
@@ -47,16 +44,16 @@ function Panier() {
           <tr>
             <th>Product</th>
             <th>Price</th>
-            {/* <th>Subtotal</th> */}
           </tr>
         </thead>
         <tbody>
           <div className="panier__general">
-            {articles.map((article) => {
+            {articles.map((article, index) => {
               return (
                 <tr key={article._id}>
                   <td>
                     <img
+                      key={index}
                       style={{ width: 48, height: 48 }}
                       src={article.picture[0]}
                       alt={article.title}
@@ -72,7 +69,6 @@ function Panier() {
                       Delete this article
                     </button>
                   </td>
-                  {/* <td>TOTAL : {subTotal}</td> */}
                 </tr>
               );
             })}

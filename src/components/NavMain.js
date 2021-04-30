@@ -1,17 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import LocalMallIcon from "@material-ui/icons/LocalMall";
 import { IconButton } from "@material-ui/core";
 import "../css/NavMain.css";
 
-// la
 import { withUser } from "../components/Auth/withUser";
 import apiHandler from "../api/apiHandler";
 
+// TEST
+// import { getCardItems } from "../module/logique";
+// import cartContext from "../module/cart-context";
+
 function NavMain(props) {
-  const [hover, setHover] = useState(false);
-  const toggleHover = () => setHover(!hover);
-  // console.log("PROPS", props.context.user.panier);
+  // const [hover, setHover] = useState(false);
+  // const toggleHover = () => setHover(!hover);
+
+  //TEST
+  const [panier, setPanier] = useState([]);
+  const addToCart = (product) => {
+    setPanier((prev) => [...prev, product]);
+  };
+  // useEffect(() => {
+  //   addToCart();
+  // }, [panier]);
+
   const { context } = props;
   function handleLogout() {
     apiHandler
@@ -57,14 +69,15 @@ function NavMain(props) {
           <IconButton edge="start" color="inherit">
             <LocalMallIcon fontSize="large" />
           </IconButton>
+          {/* ({getCardItems().length}) */}
         </Link>
       </div>
 
       <div className="navMain__down">
         <NavLink to="/vetements">
-          <h2 onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-            Kind Of Cool - Clothes
-          </h2>
+          {/* <h2 onMouseEnter={toggleHover} onMouseLeave={toggleHover}> */}
+          <h2>Kind Of Cool - Clothes</h2>
+          {/* </h2> */}
         </NavLink>
 
         <NavLink to="/accessoires">
@@ -75,14 +88,14 @@ function NavMain(props) {
           <h2>Kind Of Cool - Creators</h2>
         </NavLink>
       </div>
-      <div className="navMain__sousCategories">
+      {/* <div className="navMain__sousCategories">
         <NavLink to="/haut">
           <div>{hover ? <p>Haut</p> : ""}</div>
         </NavLink>
         <NavLink to="/bas">
           <div>{hover ? <p>Bas</p> : ""}</div>
         </NavLink>
-      </div>
+      </div> */}
     </div>
   );
 }

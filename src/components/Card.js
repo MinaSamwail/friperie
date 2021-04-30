@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../css/Card.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
@@ -14,7 +14,7 @@ function Card(props) {
       .transferArticle(article)
       .then((data) => {
         setAlert("Cet article a bien été ajouté à votre panié");
-        // console.log(`data:`, data);
+        console.log(`data:`, data);
       })
       .catch((error) => {
         console.log(error);
@@ -43,5 +43,11 @@ function Card(props) {
     </div>
   );
 }
+
+// TEST
+// function Card(props) {
+//   console.log("PROPS", props);
+//   return <div>{/* <h1>{title}</h1> */}</div>;
+// }
 
 export default Card;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Banner from "../components/Banner";
 import "../css/Home.css";
@@ -6,6 +6,7 @@ import vestiaire from "../data/vestiaire.json";
 
 function Home() {
   const [vestiaires, setVestiaire] = useState(vestiaire);
+  const [value, setValue] = useState("");
 
   const triPrixDecroissant = () => {
     const sortedUp = [...vestiaires].sort((articleA, articleB) => {
@@ -26,7 +27,10 @@ function Home() {
   return (
     <div className="home">
       <Banner />
-      {vestiaires.map((vetement, i) => (
+      <div onClick={triPrixDecroissant}>Trier par prix decroissant</div>
+      <div onClick={triPrixCroissant}>Trier par prix croissant</div>
+
+      {vestiaires.map((vetement) => (
         <Link
           key={vetement.id}
           className="home__link"
@@ -48,8 +52,6 @@ function Home() {
           </div>
         </Link>
       ))}
-      <div onClick={triPrixDecroissant}>Trier par prix decroissant</div>
-      <div onClick={triPrixCroissant}>Trier par prix croissant</div>
     </div>
   );
 }
